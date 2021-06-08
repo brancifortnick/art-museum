@@ -3,11 +3,14 @@ import "./GalleryNavigation.css";
 
 
 const GalleryNavigation = ({ galleries }) => {
-//  console.log(galleries);
+ console.log(galleries);
   return (
     <nav>
       <h1>Galleries</h1>
        <NavLink to='/' exact>Home Page</NavLink>
+       {galleries.map((gallery)=> {
+         <NavLink key={gallery.id} to= {`/galleries/${gallery.id}`}></NavLink>;
+       })}
     </nav>
   );
 };
